@@ -19,8 +19,8 @@
 </head>
 
 <div id="container"></div>
-<label for="id">Enter DEMO Number</label>
-<input type="text" required id="inputValue" name="id">
+<label for="id">Enter DEMO Number Only</label>
+<input type="number" required id="inputValue" name="id">
 
 <script>
   
@@ -30,8 +30,7 @@
 
     const container = document.getElementById("container").innerHTML=``;
     let i=document.getElementById("inputValue").value;
-    console.log(i);
-    
+ 
     getImage(i);
 });
 
@@ -47,7 +46,7 @@
         const container = document.getElementById("container");
 
         // Generate images and append them to the container
-        const imageSrc = `https://ftp.iumssagaruniv.com/DHSGUFTP/studentImage/${id}_PHOTO.jpg`;
+        const imageSrc = `https://ftp.iumssagaruniv.com/DHSGUFTP/studentImage/DEMO${id}_PHOTO.jpg`;
 
         const image = document.createElement('img');
         image.src = imageSrc;
