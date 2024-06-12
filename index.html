@@ -23,16 +23,16 @@
 <input type="number" required id="inputValue" name="id">
 
 <script>
-  
 
 
-  document.getElementById("inputValue").addEventListener("input", () => {
 
-    const container = document.getElementById("container").innerHTML=``;
-    let i=document.getElementById("inputValue").value;
- 
-    getImage(i);
-});
+    document.getElementById("inputValue").addEventListener("input", () => {
+
+        const container = document.getElementById("container").innerHTML = ``;
+        let i = document.getElementById("inputValue").value;
+
+        getImage(i);
+    });
 
 
 
@@ -56,6 +56,16 @@
         image.style.width = "200px";
 
         container.appendChild(image);
+
+        
+        const signImage = document.createElement('img');
+        signImage.src = `https://ftp.iumssagaruniv.com/DHSGUFTP/studentImage//DEMO${id}_SIGNATURE.jpg`;
+        signImage.alt = `Image ${id}`;
+        signImage.classList.add('image');
+        signImage.style.height = "200px";
+        signImage.style.width = "200px";
+
+        container.appendChild(signImage);
     }
 
 
