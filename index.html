@@ -15,13 +15,38 @@
         .image {
             margin: 10px;
         }
+        #logic{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: column;
+            height: 130px;
+
+        }
+        .btn{
+            width:100px;
+        }
+       
     </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <div id="container"></div>
-<label for="id">Enter DEMO Number Only</label>
+
+<div id="logic">
+
+<label for="id" id="text"> DEMO NUMBER </label>
 <input type="number" required id="inputValue" name="id">
 
+
+
+<div id="buttons">
+
+
+    <button type="button" class="btn btn-warning" id="prev" onclick="prev()">Previous</button>
+    <button type="button"id="next" onclick="next()" class="btn btn-success"> Next </button>
+</div>
+</div>
 <script>
 
 
@@ -66,16 +91,36 @@
         signImage.style.width = "200px";
 
         container.appendChild(signImage);
+
+        
     }
 
 
 
 
 
+// logic of next and previous
 
+function next(){
+let currentId=parseInt(document.getElementById("inputValue").value)
+nextId=currentId+1
 
+const container = document.getElementById("container").innerHTML = ``;
+       document.getElementById("inputValue").value=nextId;
 
+        getImage(nextId);
 
+}
+function prev(){
+let currentId=parseInt(document.getElementById("inputValue").value)
+prevId=currentId-1
+
+const container = document.getElementById("container").innerHTML = ``;
+       document.getElementById("inputValue").value=prevId;
+
+        getImage(prevId);
+
+}
 
 
 
